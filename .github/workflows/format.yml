@@ -26,7 +26,7 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
-          author_name: ${{ GITHUB_ACTOR }}
+          author_name: ${{ env.GITHUB_ACTOR }}
           author_email: reformat@repo.com
           message: "Reformat codes"
           add: "*.py"
