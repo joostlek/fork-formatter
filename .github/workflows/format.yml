@@ -1,5 +1,5 @@
 name: Reformat code
-on: push
+on: pull_request
 
 jobs:
   run:
