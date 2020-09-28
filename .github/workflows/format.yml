@@ -23,6 +23,10 @@ jobs:
       - name: Format source code
         run: black .
 
+      - name: Fix Git
+        run: |
+          git config pull.rebase false
+
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
