@@ -15,7 +15,14 @@ jobs:
           python-version: 3.8
 
       - name: Install dependencies
-        uses: psf/black@stable
+        run: |
+          python -m pip install --upgrade pip
+          pip install black
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      - name: Format source code
+        run: black --diff .
+
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
