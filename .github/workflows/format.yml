@@ -23,13 +23,12 @@ jobs:
       - name: Format source code
         run: black --diff .
 
-
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
           author_name: ${{ env.GITHUB_ACTOR }}
           author_email: reformat@repo.com
           message: "Reformat codes"
-          add: "*.py"
+          add: "."
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
